@@ -226,6 +226,7 @@ function couple(pc, targetId, signaller, opts) {
 
   function handleReady(src) {
     if (targetReady || !src || src.id !== targetId) {
+      emit('target.ready');
       return;
     }
     debug('[' + signaller.id + '] ' + targetId + ' is ready for coupling');
